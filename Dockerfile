@@ -17,4 +17,15 @@ RUN apt-get install -y tmux
 # Install cmake
 RUN apt-get install -y cmake
 
+# Install clang
+RUN apt-get install -y clang
+
+# Install conan
+RUN apt-get install -y python3-pip
+RUN pip3 install conan
+ADD .conan_profiles_default /root/.conan/profiles/default
+
+# Set envs to make cmake use clang
+ENV CC=/usr/bin/clang CXX=/usr/bin/clang++
+
 WORKDIR /opt/cpp
