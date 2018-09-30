@@ -1,3 +1,0 @@
-#/bin/sh
-
-g++ -ansi -pedantic-errors -Wall $1 $2 $3 -std=c++17
